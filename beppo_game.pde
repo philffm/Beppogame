@@ -11,6 +11,9 @@ int score;
 int r1;
 int r2;
 int r3;
+String r1img="kim.png";
+String r2img="vlad.png";
+String r3img="donald.png";
 
 
 String[] imageNames = { "kim.png", "vlad.png", "donald.png" };
@@ -86,6 +89,9 @@ if (killswitch == false) {
     if (down <= -2200) {
       down = 0;
       r1 = int(random(0, 6));
+      int index = int(random(imageNames.length));
+      String r1img= imageNames[index];
+
       r2 = int(random(0, 6));
       r3 = int(random(0, 6));
       score += 1;
@@ -121,21 +127,17 @@ if (killswitch == false) {
 
 void obstacle(int r) {
   
-   /*for (int i=0; i < imageNames.length; i++){
-      String imageName = imageNames[i];
-      images[i] = loadImage(imageName);
-    }*/
-    
+
       if (r == 0) {
-      rect(width/8 + 10, -down, wide - 20, -height/10);
+      image(loadImage(r1img),width/8 + 10, -down, wide - 20, -height/10);
     } else if (r == 1) {
-      rect(width/8 + leftRight + 10, -down, wide - 20, -height/10);
+      image(loadImage(r2img),width/8 + leftRight + 10, -down, wide - 20, -height/10);
     } else if (r == 2) {
-      rect(width/8 + leftRight *2 + 10, -down, wide - 20, -height/10);
+      image(loadImage(r3img),width/8 + leftRight *2 + 10, -down, wide - 20, -height/10);
     } else if (r == 3) {
-      rect(width/8 + leftRight *3 + 10, -down, wide - 20, -height/10);
+      image(loadImage(r2img),width/8 + leftRight *3 + 10, -down, wide - 20, -height/10);
     } else {
-      rect(width/8 + leftRight *4 + 10, -down, wide - 20, -height/10);
+      image(loadImage(r1img),width/8 + leftRight *4 + 10, -down, wide - 20, -height/10);
     }
 }
 
