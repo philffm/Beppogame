@@ -104,7 +104,9 @@ if (killswitch == false) {
   
   
     /* speed */
-    if (score < 5) {
+    if (score < 1) {
+      down = down - 5;
+    } else if (score < 5) { 
       down = down - 15;
     } else if (score < 10) { 
       down = down - 20;
